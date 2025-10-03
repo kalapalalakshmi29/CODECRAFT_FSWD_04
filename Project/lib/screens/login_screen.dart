@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/auth_service.dart';
 import '../models/user.dart';
-import 'chat_screen.dart';
+import 'advanced_main_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -21,13 +21,13 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0A0E27),
+      backgroundColor: const Color(0xFF4A148C),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [Color(0xFF0A0E27), Color(0xFF1A1F3A)],
+            colors: [Color(0xFF4A148C), Color(0xFF880E4F)],
           ),
         ),
         child: Center(
@@ -44,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Icon(
                       Icons.chat_bubble_outline,
                       size: 64,
-                      color: Colors.blue[300],
+                      color: Colors.pink[300],
                     ),
                     const SizedBox(height: 24),
                     Text(
@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(color: Colors.blue[300]!),
+                          borderSide: BorderSide(color: Colors.purple[300]!),
                         ),
                       ),
                     ),
@@ -94,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: BorderSide(color: Colors.blue[300]!),
+                          borderSide: BorderSide(color: Colors.purple[300]!),
                         ),
                       ),
                     ),
@@ -116,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(color: Colors.blue[300]!),
+                            borderSide: BorderSide(color: Colors.purple[300]!),
                           ),
                         ),
                       ),
@@ -127,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: ElevatedButton(
                         onPressed: _isLoading ? null : _handleSubmit,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue[600],
+                          backgroundColor: Colors.purple[600],
                           padding: const EdgeInsets.symmetric(vertical: 16),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
@@ -156,7 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         _isLogin
                             ? "Don't have an account? Sign up"
                             : 'Already have an account? Login',
-                        style: TextStyle(color: Colors.blue[300]),
+                        style: TextStyle(color: Colors.pink[300]),
                       ),
                     ),
                   ],
@@ -189,7 +189,7 @@ class _LoginScreenState extends State<LoginScreen> {
           if (mounted) {
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
-                builder: (context) => ChatScreen(currentUser: user),
+                builder: (context) => AdvancedMainScreen(currentUser: user),
               ),
             );
           }

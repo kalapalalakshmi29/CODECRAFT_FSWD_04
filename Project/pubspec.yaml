@@ -1,7 +1,7 @@
-name: realtime_chat_app
-description: "A Flutter real-time chat application using WebSocket technology."
+name: task_04
+description: "A new Flutter project."
 publish_to: 'none'
-version: 1.0.0+1
+version: 0.1.0
 
 environment:
   sdk: ^3.8.1

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'services/auth_service.dart';
 import 'screens/login_screen.dart';
-import 'screens/chat_screen.dart';
+import 'screens/advanced_main_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +25,8 @@ class ChatApp extends StatelessWidget {
       title: 'Real-time Chat',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
           elevation: 0,
@@ -68,7 +69,7 @@ class _AuthWrapperState extends State<AuthWrapper> {
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
-                  colors: [Color(0xFF667eea), Color(0xFF764ba2)],
+                  colors: [Color(0xFF8E24AA), Color(0xFFE91E63)],
                 ),
               ),
               child: const Center(
@@ -79,7 +80,7 @@ class _AuthWrapperState extends State<AuthWrapper> {
         }
         
         if (snapshot.hasData && snapshot.data != null) {
-          return ChatScreen(currentUser: snapshot.data!);
+          return AdvancedMainScreen(currentUser: snapshot.data!);
         }
         
         return const LoginScreen();
